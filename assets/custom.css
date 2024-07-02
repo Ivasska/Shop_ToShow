@@ -1,3 +1,4 @@
+/* ----------- section image-slider-------- */
 /* -------------Slick Slider---------- */
 .product-slider .slick-initialized .slick-slider {
   position: relative;
@@ -54,12 +55,6 @@
 .product-item img {
   width: 100%;
 }
-
-.product-grid {
-  /* display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-}
 .featured-products {
   padding: 20px 0 20px;
 }
@@ -68,3 +63,8 @@
   display: block;
   text-align: center;
 }
+/* ----------- end section image-slider-------- */
+
+
+/* ----------- section marquee-------- */
+/* ----------- end section image-slider-------- */
