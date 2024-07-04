@@ -3566,3 +3566,14 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+/* -----new code-------- */
+.header__active-menu-item {
+  text-decoration: none;
+}
+
+.header__menu-item:hover span {
+  text-decoration: none;
+}
+/* ------end new code---- */
