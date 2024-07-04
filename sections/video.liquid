@@ -19,7 +19,8 @@
   assign video_id = section.settings.video.id | default: section.settings.video_url.id
   assign video_alt = section.settings.video.alt | default: section.settings.description
   assign alt = 'sections.video.load_video' | t: description: video_alt | escape
-  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+  assign poster_desktop = section.settings.desktop_cover_image
+  assign poster_mobile = section.settings.mobile_cover_image
 
   if section.settings.video != null
     assign ratio_diff = section.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
@@ -51,6 +52,7 @@
         </div>
       {%- endunless -%}
     </div>
+
     <deferred-media
       class="video-section__media deferred-media gradient global-media-settings{% if section.settings.full_width %} global-media-settings--full-width{% endif %}{% if fix_ratio %} media-fit-cover{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
       data-media-id="{{ video_id }}"
@@ -64,12 +66,17 @@
         type="button"
         aria-label="{{ alt }}"
       >
-        {%- if poster != null -%}
-          {{
-            poster
-            | image_url: width: 3840
-            | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
-          }}
+        {%- if poster_desktop != null or poster_mobile != null -%}
+          <picture>
+            <source srcset="{{ poster_mobile | image_url: width: 3840 }}" media="(max-width: 767px)">
+            <source srcset="{{ poster_desktop | image_url: width: 3840 }}" media="(min-width: 768px)">
+            <img
+              src="{{ poster_desktop | image_url: width: 3840 }}"
+              alt="{{ alt }}"
+              sizes="{{ sizes }}"
+              srcset="{{ poster_desktop | image_url: width: 3840 }} 3840w, {{ poster_desktop | image_url: width: 3000 }} 3000w, {{ poster_desktop | image_url: width: 2000 }} 2000w, {{ poster_desktop | image_url: width: 1780 }} 1780w, {{ poster_desktop | image_url: width: 1500 }} 1500w, {{ poster_desktop | image_url: width: 1100 }} 1100w, {{ poster_desktop | image_url: width: 750 }} 750w, {{ poster_desktop | image_url: width: 375 }} 375w"
+            >
+          </picture>
         {%- else -%}
           {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
         {%- endif -%}
@@ -194,8 +201,13 @@
     },
     {
       "type": "image_picker",
-      "id": "cover_image",
-      "label": "t:sections.video.settings.cover_image.label"
+      "id": "desktop_cover_image",
+      "label": "Desktop Cover Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_cover_image",
+      "label": "Mobile Cover Image"
     },
     {
       "type": "text",
