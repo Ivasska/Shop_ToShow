@@ -56,60 +56,6 @@
         "show_text_below": false
       }
     },
-    "image_slider_BJJBDb": {
-      "type": "image-slider",
-      "blocks": {
-        "product_3PzyUL": {
-          "type": "product",
-          "settings": {
-            "product": "convertible-gym-bag"
-          }
-        },
-        "product_CfW8BF": {
-          "type": "product",
-          "settings": {
-            "product": "dagne-dover-dakota-large-neoprene-backpack"
-          }
-        },
-        "product_H3C6FV": {
-          "type": "product",
-          "settings": {
-            "product": "dagne-dover-landon-large-carryall-bag"
-          }
-        },
-        "product_8apwXT": {
-          "type": "product",
-          "settings": {
-            "product": "featherweight-at-the-ready-square-neck-dress"
-          }
-        },
-        "product_x7rUQW": {
-          "type": "product",
-          "settings": {
-            "product": "high-waisted-midi-legging"
-          }
-        },
-        "product_eJKUGz": {
-          "type": "product",
-          "settings": {
-            "product": "if-you-pleats-mini-skirt"
-          }
-        }
-      },
-      "block_order": [
-        "product_3PzyUL",
-        "product_CfW8BF",
-        "product_H3C6FV",
-        "product_8apwXT",
-        "product_x7rUQW",
-        "product_eJKUGz"
-      ],
-      "settings": {
-        "title": "Рекомендовані товари",
-        "padding_top": 10,
-        "padding_bottom": 10
-      }
-    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -301,16 +247,72 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "li_image_slider_QWwRkE": {
+      "type": "li-image-slider",
+      "blocks": {
+        "product_KeQfNx": {
+          "type": "product",
+          "settings": {
+            "product": "convertible-gym-bag"
+          }
+        },
+        "product_VM4mpt": {
+          "type": "product",
+          "settings": {
+            "product": "dagne-dover-landon-large-carryall-bag"
+          }
+        },
+        "product_Tg4wXd": {
+          "type": "product",
+          "settings": {
+            "product": "featherweight-at-the-ready-square-neck-dress"
+          }
+        },
+        "product_3XkEHi": {
+          "type": "product",
+          "settings": {
+            "product": "high-waisted-midi-legging"
+          }
+        },
+        "product_iRGfDb": {
+          "type": "product",
+          "settings": {
+            "product": "if-you-pleats-mini-skirt"
+          }
+        }
+      },
+      "block_order": [
+        "product_KeQfNx",
+        "product_VM4mpt",
+        "product_Tg4wXd",
+        "product_3XkEHi",
+        "product_iRGfDb"
+      ],
+      "settings": {
+        "title": "Рекомендовані товари",
+        "show_section_enable": true,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false
+      }
     }
   },
   "order": [
     "image_banner",
-    "image_slider_BJJBDb",
     "rich_text",
     "featured_collection",
     "collage",
     "video",
     "multicolumn",
-    "featured_collection_nKytDq"
+    "featured_collection_nKytDq",
+    "li_image_slider_QWwRkE"
   ]
 }
