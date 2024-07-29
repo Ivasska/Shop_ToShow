@@ -824,25 +824,60 @@
     display: block;
     border-radius: 8px;
   }
+  /* Медіа-запити для мобільних пристроїв */
+  @media (max-width: 900px) {
+    .product-slider-container {
+      flex-direction: column; /* Вертикальне розміщення елементів */
+    }
+    .product-slider-thumbs {
+      width: 100%;
+      flex-direction: row; /* Горизонтальне розміщення мініатюр */
+      order: 2; /* Перемістити мініатюри після головного слайдера */
+      justify-content: center;
+      gap: 5px;
+    }
+    .product-slider-thumb {
+      flex: 1;
+    }
+    .product-slider-thumb__image {
+      width: 60px;
+    }
+    .product-slider_next {
+      order: 1; /* Перемістити головний слайдер перед мініатюрами */
+    }
+  }
 {% endstyle %}
 {% comment %} -------new code----- {% endcomment %}
 <script>
   $(document).ready(function () {
-    $('.product-slider_next').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: true,
-      asNavFor: '.product-slider-thumbs',
-    });
+    function initSlick() {
+      var isMobile = $(window).width() <= 900;
+      var vertical = !isMobile;
 
-    $('.product-slider-thumbs').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      asNavFor: '.product-slider_next',
-      centerMode: true,
-      focusOnSelect: true,
-      vertical: true, // Робить слайдер вертикальним
-      verticalSwiping: true, // Дозволяє вертикальне перетягування
+      $('.product-slider_next').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.product-slider-thumbs',
+      });
+
+      $('.product-slider-thumbs').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.product-slider_next',
+        centerMode: true,
+        focusOnSelect: true,
+        vertical: vertical,
+        verticalSwiping: vertical,
+      });
+    }
+
+    initSlick();
+
+    $(window).on('resize', function () {
+      $('.product-slider_next').slick('unslick');
+      $('.product-slider-thumbs').slick('unslick');
+      initSlick();
     });
   });
 </script>
