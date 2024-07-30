@@ -127,6 +127,9 @@
         "scrolling_text_MQqHFf",
         "scrolling_text_cGKUqr"
       ],
+      "custom_css": [
+        ".marquee {background-color: #86c1f3;}"
+      ],
       "settings": {
       }
     },
