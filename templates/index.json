@@ -341,6 +341,42 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "li_marquee_section_jag8xF": {
+      "type": "li-marquee-section",
+      "blocks": {
+        "scrolling_text_fpeF7d": {
+          "type": "ScrollingText",
+          "settings": {
+            "text": "sport",
+            "color": "#000000",
+            "svg_image": "shopify:\/\/shop_images\/sport.svg"
+          }
+        },
+        "scrolling_text_MQqHFf": {
+          "type": "ScrollingText",
+          "settings": {
+            "text": "fashion",
+            "color": "#000000",
+            "svg_image": "shopify:\/\/shop_images\/fashion.svg"
+          }
+        },
+        "scrolling_text_cGKUqr": {
+          "type": "ScrollingText",
+          "settings": {
+            "text": "style",
+            "color": "#000000",
+            "svg_image": "shopify:\/\/shop_images\/style.svg"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_fpeF7d",
+        "scrolling_text_MQqHFf",
+        "scrolling_text_cGKUqr"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -352,6 +388,7 @@
     "collage",
     "video",
     "multicolumn",
-    "featured_collection_nKytDq"
+    "featured_collection_nKytDq",
+    "li_marquee_section_jag8xF"
   ]
 }
