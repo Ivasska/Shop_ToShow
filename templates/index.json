@@ -83,6 +83,17 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "li_collection_CEKj97": {
+      "type": "li-collection",
+      "settings": {
+        "show_section_enable": true,
+        "section_title": "",
+        "section_description": "",
+        "collection": "women-leggings",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "li_image_slider_QWwRkE": {
       "type": "li-image-slider",
       "blocks": {
@@ -334,6 +345,7 @@
   },
   "order": [
     "slideshow_riAH7U",
+    "li_collection_CEKj97",
     "li_image_slider_QWwRkE",
     "rich_text",
     "featured_collection",
