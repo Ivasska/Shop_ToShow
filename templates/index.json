@@ -15,7 +15,8 @@
         "slide_iwwDXk": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image.png",
+            "desktop_image": "shopify:\/\/shop_images\/Image.png",
+            "mobile_image": "shopify:\/\/shop_images\/23.webp",
             "heading": "<strong>COMFORT AND STYLE<\/strong>",
             "heading_size": "h1",
             "subheading": "comfortable and stylish dresses for sports",
@@ -33,7 +34,6 @@
         "slide_F3BP3g": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/main-image_1100x_5bd5031c-dab1-4694-ad27-a85580717e81.webp",
             "heading": "<strong>EVERYTHING YOU NEED FOR EVERY DAY<\/strong>",
             "heading_size": "h1",
             "subheading": "comfortable and stylish skirt for sports",
@@ -51,7 +51,6 @@
         "slide_kEJQpt": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/backpacks-2048px-3x2-0006.webp",
             "heading": "<strong>NEW ARRIVALS<\/strong>",
             "heading_size": "h1",
             "subheading": "stylish and roomy bags for every day",
