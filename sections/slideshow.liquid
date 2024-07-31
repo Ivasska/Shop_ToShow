@@ -247,6 +247,21 @@
   <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{% style %}
+  slideshow__media {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.slideshow__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+{% endstyle %}
+
 {% schema %}
 {
   "name": "t:sections.slideshow.name",
