@@ -16,14 +16,14 @@
 
     @media (max-width: 767px) {
       /* ------new code------ */
-      .slideshow__custom {
-      position: absolute;
-      align-items: center;
-      display: flex;
-      top: 57%;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
+      .slideshow__controls {
+        position: absolute;
+        top: 10px; /* Відступ зверху, налаштуйте за потреби */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        z-index: 10; /* Забезпечує, що контролери відображаються поверх інших елементів */
       }
       /* -------end new code-------- */
     }
@@ -47,7 +47,6 @@
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
     <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
-      <div class="slideshow__custom">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -101,7 +100,6 @@
           {%- render 'icon-play' -%}
         </button>
       {%- endif -%}
-        </div>
     </div>
   {%- endif -%}
 
