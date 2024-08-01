@@ -46,7 +46,8 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__custom slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+      <div class="slideshow__custom">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -100,6 +101,7 @@
           {%- render 'icon-play' -%}
         </button>
       {%- endif -%}
+        </div>
     </div>
   {%- endif -%}
 
