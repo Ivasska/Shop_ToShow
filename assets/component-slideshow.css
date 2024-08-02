@@ -129,7 +129,7 @@ slideshow-component .slideshow.banner {
 @media screen and (max-width: 749px) {
   .slideshow__controls {
     position: absolute;    
-    top: 57%; 
+    top:55%; 
     left: 50%;    
     transform: translateX(-50%);    
     display: flex;    
