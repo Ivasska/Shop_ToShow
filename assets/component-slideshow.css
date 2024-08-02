@@ -126,6 +126,18 @@ slideshow-component .slideshow.banner {
   }
 }
 
+@media screen and (max-width: 749px) {
+  .slideshow__controls {
+    position: absolute;    
+    top: 10px; 
+    left: 50%;    
+    transform: translateX(-50%);    
+    display: flex;    
+    align-items: center;    
+    z-index: 10;
+  }
+}
+
 slideshow-component:not(.page-width) .slider-buttons {
   border-right: 0;
   border-left: 0;
