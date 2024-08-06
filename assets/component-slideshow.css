@@ -126,6 +126,8 @@ slideshow-component .slideshow.banner {
   }
 }
 
+
+/* new code */
 @media screen and (max-width: 749px) {
   .slideshow__controls {
     position: absolute;    
@@ -137,6 +139,7 @@ slideshow-component .slideshow.banner {
     z-index: 10;
   }
 }
+/* end new code */
 
 slideshow-component:not(.page-width) .slider-buttons {
   border-right: 0;
