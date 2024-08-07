@@ -119,11 +119,12 @@
     "currency_code_enabled": true,
     "cart_type": "drawer",
     "show_vendor": false,
-    "show_cart_note": false,
+    "show_cart_note": true,
     "cart_drawer_collection": "",
     "cart_progress_threshold": "550",
     "cart_progress_bar_color": "#b9e1fb",
     "cart_progress_bar_full_color": "#0089d5",
+    "payment_enable": true,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
