@@ -609,4 +609,46 @@
 
   }
 </style>
+
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const headings = document.querySelectorAll('.grid .footer-block__heading');
+
+  const handleCollapse = (heading) => {
+    const content = heading.nextElementSibling;
+
+    if (heading.classList.contains('block-collapsed')) {
+      heading.classList.remove('block-collapsed');
+      heading.setAttribute('aria-expanded', 'true');
+      content.style.display = 'block'; // or any other preferred display property
+    } else {
+      heading.classList.add('block-collapsed');
+      heading.setAttribute('aria-expanded', 'false');
+      content.style.display = 'none';
+    }
+  };
+
+  headings.forEach((heading, index) => {
+    heading.classList.add('block-collapsed');
+    heading.setAttribute('role', 'button');
+    heading.setAttribute('aria-expanded', 'false');
+    heading.setAttribute('tabindex', '0');
+
+    const content = heading.nextElementSibling;
+    content.setAttribute('id', `footer-block-index-${index}`);
+    heading.setAttribute('aria-controls', `footer-block-index-${index}`);
+
+    heading.addEventListener('click', () => {
+      handleCollapse(heading);
+    });
+
+    heading.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        handleCollapse(heading);
+      }
+    });
+  });
+});
+</script>
 <!-- end new code -->
