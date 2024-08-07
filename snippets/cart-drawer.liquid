@@ -15,6 +15,11 @@
   .drawer {
     visibility: hidden;
   }
+
+
+  .list-payment.CartDrawer-list-payment {
+    justify-content: center;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
@@ -545,6 +550,27 @@
             {{ 'sections.cart.checkout' | t }}
           </button>
         </div>
+
+
+        
+        <!-- new code -->
+        {%- if settings.payment_enable -%}
+          <div class="footer__payment">
+            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+            <ul class="list list-payment CartDrawer-list-payment" role="list">
+              {%- for type in shop.enabled_payment_types -%}
+                <li class="list-payment__item">
+                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        <!-- end new code -->
+
+
+        
       </div>
     </div>
   </div>
