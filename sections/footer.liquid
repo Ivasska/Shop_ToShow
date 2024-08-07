@@ -582,14 +582,14 @@
       position: absolute;
       right: 0;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-50%) rotate(0deg);
       width: 20px;
       text-align: center;
       transition: transform 0.2s ease-out;
     }
     .grid .footer-block__heading:not(.block-collapsed)::after {
       content: "-";
-      transform: translateY(-50%) rotate(0deg);
+      transform: translateY(-50%) rotate(180deg);
     }
     .grid .footer-block__heading.block-collapsed + .footer-block__details-content {
       visibility: hidden;
@@ -597,14 +597,14 @@
       height: 0;
       margin: 0;
       padding: 0;
-      transition: all 0.2s ease-out;
+      transition: all .2s ease-out;
       overflow: hidden;
     }
     .grid .footer-block__heading + .footer-block__details-content {
       visibility: visible;
       opacity: 1;
       height: auto;
-      transition: all 0.2s ease-out;
+      transition: all .2s ease-out;
       overflow: hidden;
       margin-bottom: 3rem;
     }
