@@ -585,9 +585,11 @@
       transform: translateY(-50%);
       width: 20px;
       text-align: center;
+      transition: transform 0.2s ease-out;
     }
     .grid .footer-block__heading:not(.block-collapsed)::after {
       content: "-";
+      transform: translateY(-50%) rotate(0deg);
     }
     .grid .footer-block__heading.block-collapsed + .footer-block__details-content {
       visibility: hidden;
