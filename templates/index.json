@@ -86,56 +86,6 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "li_collection_CEKj97": {
-      "type": "li-collection",
-      "settings": {
-        "show_section_enable": true,
-        "section_title": "FOR HER",
-        "section_description": "<p>Our store offers a wide range of comfortable and convenient women's sportswear. Each piece is designed with high-quality, breathable fabrics to ensure maximum comfort during workouts. Our collection is perfect for any active lifestyle. Discover the perfect blend of style and functionality in our sportswear assortment.<\/p>",
-        "collection": "варіант-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "li_marquee_section_jag8xF": {
-      "type": "li-marquee-section",
-      "blocks": {
-        "scrolling_text_fpeF7d": {
-          "type": "ScrollingText",
-          "settings": {
-            "text": "sport",
-            "color": "#000000",
-            "svg_image": "shopify:\/\/shop_images\/sport.svg"
-          }
-        },
-        "scrolling_text_MQqHFf": {
-          "type": "ScrollingText",
-          "settings": {
-            "text": "fashion",
-            "color": "#000000",
-            "svg_image": "shopify:\/\/shop_images\/fashion.svg"
-          }
-        },
-        "scrolling_text_cGKUqr": {
-          "type": "ScrollingText",
-          "settings": {
-            "text": "style",
-            "color": "#000000",
-            "svg_image": "shopify:\/\/shop_images\/style.svg"
-          }
-        }
-      },
-      "block_order": [
-        "scrolling_text_fpeF7d",
-        "scrolling_text_MQqHFf",
-        "scrolling_text_cGKUqr"
-      ],
-      "custom_css": [
-        ".marquee {background-color: #86c1f3;}"
-      ],
-      "settings": {
-      }
-    },
     "li_image_slider_QWwRkE": {
       "type": "li-image-slider",
       "blocks": {
@@ -190,6 +140,110 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false
+      }
+    },
+    "li_lookbook_section_g4XQWr": {
+      "type": "li-lookbook-section",
+      "blocks": {
+        "product_qVzpEp": {
+          "type": "product",
+          "settings": {
+            "product": "spacedye-always-on-cropped-tank",
+            "description": "",
+            "horizontal": 25,
+            "vertical": 22
+          }
+        },
+        "product_cFHjWm": {
+          "type": "product",
+          "settings": {
+            "product": "midi-legging",
+            "description": "",
+            "horizontal": 90,
+            "vertical": 36
+          }
+        },
+        "product_4dTakq": {
+          "type": "product",
+          "settings": {
+            "product": "heather-rib-high-waisted-practice-pant",
+            "description": "",
+            "horizontal": 41,
+            "vertical": 45
+          }
+        }
+      },
+      "block_order": [
+        "product_qVzpEp",
+        "product_cFHjWm",
+        "product_4dTakq"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/athletic-wear-group-class.jpg",
+        "text_size": 85,
+        "show_toggle_element": false,
+        "Icon-color": "#d73030",
+        "pin_highlight_color": "#ffffff",
+        "text_color": "#102225",
+        "text_background_color": "#FFFFFF",
+        "section_width": "full",
+        "inner_padding": 40,
+        "outer_margin": 10,
+        "custom_css": "",
+        "mobile_custom_css": "",
+        "override_theme_font": true,
+        "heading_font": "serif",
+        "main_font": "sans-serif"
+      }
+    },
+    "li_collection_CEKj97": {
+      "type": "li-collection",
+      "settings": {
+        "show_section_enable": true,
+        "section_title": "FOR HER",
+        "section_description": "<p>Our store offers a wide range of comfortable and convenient women's sportswear. Each piece is designed with high-quality, breathable fabrics to ensure maximum comfort during workouts. Our collection is perfect for any active lifestyle. Discover the perfect blend of style and functionality in our sportswear assortment.<\/p>",
+        "collection": "варіант-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "li_marquee_section_jag8xF": {
+      "type": "li-marquee-section",
+      "blocks": {
+        "scrolling_text_fpeF7d": {
+          "type": "ScrollingText",
+          "settings": {
+            "text": "sport",
+            "color": "#000000",
+            "svg_image": "shopify:\/\/shop_images\/sport.svg"
+          }
+        },
+        "scrolling_text_MQqHFf": {
+          "type": "ScrollingText",
+          "settings": {
+            "text": "fashion",
+            "color": "#000000",
+            "svg_image": "shopify:\/\/shop_images\/fashion.svg"
+          }
+        },
+        "scrolling_text_cGKUqr": {
+          "type": "ScrollingText",
+          "settings": {
+            "text": "style",
+            "color": "#000000",
+            "svg_image": "shopify:\/\/shop_images\/style.svg"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_fpeF7d",
+        "scrolling_text_MQqHFf",
+        "scrolling_text_cGKUqr"
+      ],
+      "custom_css": [
+        ".marquee {background-color: #86c1f3;}"
+      ],
+      "settings": {
       }
     },
     "rich_text": {
@@ -387,9 +441,10 @@
   },
   "order": [
     "slideshow_riAH7U",
+    "li_image_slider_QWwRkE",
+    "li_lookbook_section_g4XQWr",
     "li_collection_CEKj97",
     "li_marquee_section_jag8xF",
-    "li_image_slider_QWwRkE",
     "rich_text",
     "featured_collection",
     "collage",
