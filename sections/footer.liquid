@@ -576,6 +576,7 @@
       margin: 0;
       padding: 1.5rem 0;
       cursor: pointer;
+      display: block;
     }
     .grid .footer-block__heading::after {
       content: "+";
@@ -597,18 +598,26 @@
       height: 0;
       margin: 0;
       padding: 0;
-      transition: all .2s ease-out;
+      transition: all 0.2s ease-out;
       overflow: hidden;
     }
     .grid .footer-block__heading + .footer-block__details-content {
       visibility: visible;
       opacity: 1;
       height: auto;
-      transition: all .2s ease-out;
+      transition: all 0.2s ease-out;
       overflow: hidden;
       margin-bottom: 3rem;
     }
+  }
 
+  @media (min-width: 750px) {
+    .grid .footer-block__heading {
+      display: none;
+    }
+    .grid .footer-block__details-content {
+      display: block; /* Завжди відображати вміст на великих екранах */
+    }
   }
 </style>
 
@@ -623,7 +632,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (heading.classList.contains('block-collapsed')) {
       heading.classList.remove('block-collapsed');
       heading.setAttribute('aria-expanded', 'true');
-      content.style.display = 'block'; // or any other preferred display property
+      content.style.display = 'block';
     } else {
       heading.classList.add('block-collapsed');
       heading.setAttribute('aria-expanded', 'false');
@@ -631,26 +640,45 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  headings.forEach((heading, index) => {
-    heading.classList.add('block-collapsed');
-    heading.setAttribute('role', 'button');
-    heading.setAttribute('aria-expanded', 'false');
-    heading.setAttribute('tabindex', '0');
+  const initCollapseFeature = () => {
+    const isMobile = window.innerWidth <= 749;
 
-    const content = heading.nextElementSibling;
-    content.setAttribute('id', `footer-block-index-${index}`);
-    heading.setAttribute('aria-controls', `footer-block-index-${index}`);
+    headings.forEach((heading, index) => {
+      const content = heading.nextElementSibling;
+      if (isMobile) {
+        heading.classList.add('block-collapsed');
+        heading.setAttribute('role', 'button');
+        heading.setAttribute('aria-expanded', 'false');
+        heading.setAttribute('tabindex', '0');
+        content.setAttribute('id', `footer-block-index-${index}`);
+        heading.setAttribute('aria-controls', `footer-block-index-${index}`);
 
-    heading.addEventListener('click', () => {
-      handleCollapse(heading);
-    });
+        heading.addEventListener('click', () => {
+          handleCollapse(heading);
+        });
 
-    heading.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        handleCollapse(heading);
+        heading.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            handleCollapse(heading);
+          }
+        });
+      } else {
+        heading.classList.remove('block-collapsed');
+        heading.removeAttribute('role');
+        heading.removeAttribute('aria-expanded');
+        heading.removeAttribute('tabindex');
+        heading.removeEventListener('click', () => handleCollapse(heading));
+        heading.removeEventListener('keydown', () => handleCollapse(heading));
+        content.style.display = 'block';
       }
     });
-  });
+  };
+
+  // Initialize on load
+  initCollapseFeature();
+
+  // Re-initialize on window resize
+  window.addEventListener('resize', initCollapseFeature);
 });
 </script>
 <!-- end new code -->
