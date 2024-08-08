@@ -9,7 +9,7 @@
 .footer__content-top {
   padding-bottom: 5rem;
   display: block;
-  text-align: center;
+  /* text-align: center; */
 }
 
 @media screen and (max-width: 749px) {
@@ -38,6 +38,7 @@
   .footer__content-top .grid {
     row-gap: 6rem;
     margin-bottom: 0;
+    text-align: center;
   }
 }
 
