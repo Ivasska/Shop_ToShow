@@ -9,6 +9,7 @@
 .footer__content-top {
   padding-bottom: 5rem;
   display: block;
+  text-align: center;
 }
 
 @media screen and (max-width: 749px) {
