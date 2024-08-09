@@ -185,10 +185,64 @@
         "Icon-color": "#d73030",
         "pin_highlight_color": "#ffffff",
         "text_color": "#102225",
-        "text_background_color": "#FFFFFF",
+        "text_background_color": "#ffffff",
         "section_width": "full",
         "inner_padding": 40,
         "outer_margin": 10,
+        "custom_css": "",
+        "mobile_custom_css": "",
+        "override_theme_font": true,
+        "heading_font": "serif",
+        "main_font": "sans-serif"
+      }
+    },
+    "li_lookbook_section_YWmbtY": {
+      "type": "li-lookbook-section",
+      "blocks": {
+        "product_QTtmMj": {
+          "type": "product",
+          "settings": {
+            "product": "spacedye-always-on-cropped-tank",
+            "description": "",
+            "horizontal": 51,
+            "vertical": 31
+          }
+        },
+        "product_t9P6pK": {
+          "type": "product",
+          "settings": {
+            "product": "midi-legging",
+            "description": "",
+            "horizontal": 3,
+            "vertical": 50
+          }
+        },
+        "product_9Tc8Qf": {
+          "type": "product",
+          "settings": {
+            "product": "heather-rib-high-waisted-practice-pant",
+            "description": "",
+            "horizontal": 83,
+            "vertical": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_QTtmMj",
+        "product_t9P6pK",
+        "product_9Tc8Qf"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/athletic-wear-group-class_749f7302-0ae2-4c78-99f3-956c9a6ae0fb.jpg",
+        "text_size": 100,
+        "show_toggle_element": false,
+        "Icon-color": "#FFFFFF",
+        "pin_highlight_color": "#FFFFFF",
+        "text_color": "#102225",
+        "text_background_color": "#FFFFFF",
+        "section_width": "full",
+        "inner_padding": 40,
+        "outer_margin": 0,
         "custom_css": "",
         "mobile_custom_css": "",
         "override_theme_font": true,
@@ -443,6 +497,7 @@
     "slideshow_riAH7U",
     "li_image_slider_QWwRkE",
     "li_lookbook_section_g4XQWr",
+    "li_lookbook_section_YWmbtY",
     "li_collection_CEKj97",
     "li_marquee_section_jag8xF",
     "rich_text",
