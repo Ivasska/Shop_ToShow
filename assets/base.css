@@ -3577,3 +3577,21 @@ details-disclosure > details {
   text-decoration: none;
 }
 /* ------end new code---- */
+
+/* ------new code----- */
+/* Code for Desktop Banner */
+@media screen and (max-width: 480px){
+  #WP--template--16058720059462__li_lookbook_section_g4XQWr {
+    display: none;
+}}
+
+/* Code for Mobile Banner */
+@media screen and (max-width: 480px) {
+#WP--template--16058720059462__li_lookbook_section_YWmbtY {
+    display: block !important;
+}}
+
+#WP--template--16058720059462__li_lookbook_section_YWmbtY {
+    display: none;
+}
+/* --------end new code------ */
