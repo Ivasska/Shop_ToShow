@@ -34,6 +34,15 @@
       </a>
     </div>
 
+
+
+    <!-- new code -->
+    {%- unless settings.cart_type == 'drawer' -%}
+	{% render 'li-cart-progress-bar' %}
+    {%- endunless -%}
+
+    <!-- end new code -->
+
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="button">
@@ -165,7 +174,7 @@
                         {%- for discount in item.line_level_discount_allocations -%}
                           <li class="discounts__discount">
                             {%- render 'icon-discount' -%}
-                            {{ discount.discount_application.title }}
+                            {{ discount.discount_application.title | escape }}
                           </li>
                         {%- endfor -%}
                       </ul>
@@ -281,7 +290,7 @@
                             <a
                               href="{{ item.url_to_remove }}"
                               class="button button--tertiary"
-                              aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                              aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
                             >
                               {% render 'icon-remove' %}
                             </a>

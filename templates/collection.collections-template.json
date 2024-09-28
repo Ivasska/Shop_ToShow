@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "collection_list_FEKrab": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_zJPR9i": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "women-dresses"
+          }
+        },
+        "featured_collection_hWargX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "women-leggings"
+          }
+        },
+        "featured_collection_HBj6jw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "women-skirt"
+          }
+        },
+        "featured_collection_DBBVT3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "варіант-1"
+          }
+        },
+        "featured_collection_k7RFxT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "варіант-2"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_zJPR9i",
+        "featured_collection_hWargX",
+        "featured_collection_HBj6jw",
+        "featured_collection_DBBVT3",
+        "featured_collection_k7RFxT"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h2",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 20,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collection_list_FEKrab",
+    "product-grid"
+  ]
+}

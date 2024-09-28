@@ -1,0 +1,99 @@
+<div class="marquee">
+  <div class="track">
+    <div class="marquee-content">
+      {% for i in (1..5) %}
+        {% for block in section.blocks %}
+          <div class="marquee-gap" style="color: {{ block.settings.color }};">
+            {{ block.settings.text }}
+            {% if block.settings.svg_image != blank %}
+              <img src="{{ block.settings.svg_image | img_url: 'master' }}" alt="SVG Image" style="height: 30px;">
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .marquee {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 50px;
+    overflow: hidden;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .marquee-content {
+    display: flex;
+    gap: 8rem;
+  }
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 23px;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee .track:hover {
+    animation-play-state: paused;
+  }
+  .marquee-gap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Marquee Full Width",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "ScrollingText",
+      "name": "Scrolling Text",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Title",
+          "label": "Scrolling Text"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "default": "#000000",
+          "label": "Text Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "svg_image",
+          "label": "SVG Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Full Width"
+    }
+  ]
+}
+{% endschema %}

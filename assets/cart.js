@@ -207,6 +207,16 @@ class CartItems extends HTMLElement {
           trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'));
         }
 
+
+        // ----------  new code -----------
+        const updatedCartTotal = parsedState.total_price;
+        this.updateProgressBar(updatedCartTotal);
+        // --------- end new code ---------
+
+
+
+        
+
         publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState, variantId: variantId });
       })
       .catch(() => {
@@ -219,10 +229,65 @@ class CartItems extends HTMLElement {
       });
   }
 
+
+  // ---------- new code --------
+  updateProgressBar(cartTotal, itemCount) {
+  const progressWrapper = document.getElementById('cart-progress-wrapper');
+
+  const moneyFormat = progressWrapper.dataset.moneyFormat;
+  const progressThreshold = parseInt(progressWrapper.dataset.threshold, 10);
+  const preGoalMessageTemplate = progressWrapper.dataset.preGoalMessageTemplate;
+  const postGoalMessage = progressWrapper.dataset.postGoalMessage;
+
+  const progressBar = document.getElementById('cart-progress-bar');
+  const goalMessageElement = document.querySelector('.goal-message');
+
+  if (itemCount === 0 || cartTotal === 0) {
+    if (progressWrapper) {
+      progressWrapper.style.display = 'none';
+    }
+    if (goalMessageElement) {
+      goalMessageElement.style.display = 'none';
+    }
+  } else {
+    if (progressWrapper) {
+      progressWrapper.style.display = 'block'; 
+    }
+    if (progressBar) {
+      progressBar.style.display = 'block';
+      const progressPercentage = Math.min((cartTotal / progressThreshold) * 100, 100); 
+      progressBar.style.width = `${progressPercentage}%`;
+
+      if (progressPercentage >= 100) {
+        progressWrapper.classList.add('full');
+      } else {
+        progressWrapper.classList.remove('full');
+      }
+    }
+  
+    if (goalMessageElement) {
+      goalMessageElement.style.display = 'block';
+      let remainingForGoal = progressThreshold - cartTotal;
+  
+      if (remainingForGoal < 0) {
+        remainingForGoal = 0;
+      }
+  
+      const remainingAmount = remainingForGoal / 100;
+      const remainingAmountFormatted = moneyFormat.replace('{{amount}}', remainingAmount.toFixed(2));
+      const preGoalMessage = preGoalMessageTemplate.replace('[remainingForGoalFormatted]', remainingAmountFormatted);
+
+      goalMessageElement.innerHTML = remainingForGoal > 0 ? preGoalMessage : postGoalMessage;
+    }
+  }
+}
+
+  //  --------end new code ---------
+
   updateLiveRegions(line, message) {
     const lineItemError =
       document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
-    if (lineItemError) lineItemError.querySelector('.cart-item__error-text').innerHTML = message;
+    if (lineItemError) lineItemError.querySelector('.cart-item__error-text').textContent = message;
 
     this.lineItemStatusElement.setAttribute('aria-hidden', true);
 

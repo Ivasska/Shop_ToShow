@@ -1221,6 +1221,13 @@ button.shopify-payment-button__button--unbranded {
   background-color: rgba(var(--color-button), var(--alpha-button-background));
 }
 
+.contact__btn {
+  display: block !important;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 20px !important;
+}
+
 .button:before,
 .shopify-challenge__button:before,
 .customer button:before,
@@ -2327,7 +2334,9 @@ input[type='checkbox'] {
 .header-wrapper {
   display: block;
   position: relative;
-  background-color: rgb(var(--color-background));
+  /* background-color: rgb(var(--color-background)); */
+  background-color: white !important;
+  opacity: 0.8;
 }
 
 .header-wrapper--border-bottom {
@@ -2492,6 +2501,7 @@ input[type='checkbox'] {
   grid-area: icons;
   justify-self: end;
   padding-right: 0.8rem;
+  gap: 10px
 }
 
 .header__icons .shopify-app-block {
@@ -2533,8 +2543,8 @@ input[type='checkbox'] {
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 2.5rem;
+  width: 2.5rem;
   padding: 0;
 }
 
@@ -3565,4 +3575,44 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
+}
+
+
+/* -----new code-------- */
+.header__active-menu-item {
+  text-decoration: none;
+}
+
+.header__menu-item:hover span {
+  text-decoration: none;
+}
+/* ------end new code---- */
+
+
+/* ------new code lookbook section ----- */
+/* Code for Desktop Banner */
+@media screen and (max-width: 480px){
+  #WP--template--16337343676486__li_lookbook_section_VTH9PL {
+    display: none;
+}}
+
+/* Code for Mobile Banner */
+@media screen and (max-width: 480px) {
+#WP--template--16337343676486__li_lookbook_section_eDa96q {
+    display: block !important;
+}}
+
+#WP--template--16337343676486__li_lookbook_section_eDa96q {
+    display: none;
+}
+/* --------end new code------ */
+
+
+
+@media screen and (min-width: 990px){
+.header--middle-left {
+    grid-template-areas: 'heading navigation icons';
+    grid-template-columns: 1fr auto 1fr;
+    column-gap: 2rem;
+}
 }

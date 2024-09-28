@@ -5,6 +5,9 @@
   data-product-id="{{ product.id }}"
   data-update-url="true"
   data-url="{{ product.url }}"
+  {% if section.settings.image_zoom == 'hover' %}
+    data-zoom-on-hover
+  {% endif %}
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
@@ -73,7 +76,41 @@
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
+
+
+
+
+        {% comment %} -----new code------ {% endcomment %}
+        {% assign images_count = product.images.size %}
+        {% if images_count >= 1 %}
+          <div class="product-slider-container">
+            <div class="product-slider_next">
+              {% for image in product.images %}
+                {% if image != blank %}
+                  <div class="product-slider__slide">
+                    <img src="{{ image.src | img_url: '500x500' }}" alt="{{ image.alt }}">
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="product-slider-thumbs">
+              {% for image in product.images %}
+                {% if image != blank %}
+                  <div class="product-slider-thumb">
+                    <img src="{{ image.src | img_url: '200x200' }}" alt="{{ image.alt }}">
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+        {% else %}
+        {% comment %} ----- end new code------ {% endcomment %}
+        
+        
+        
         {% render 'product-media-gallery', variant_images: variant_images %}
+        {% endif %}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -229,6 +266,9 @@
                   </details>
                 </div>
               {%- when 'quantity_selector' -%}
+
+                            <!-- new code -->
+                            
                 <div
                   id="Quantity-Form-{{ section.id }}"
                   class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
@@ -595,9 +635,10 @@
                           </div>
                           {%- if number_of_slides > 1 -%}
                             <div class="slider-buttons">
+                              <div class="slider-buttons__container">
                               <button
                                 type="button"
-                                class="slider-button slider-button--prev"
+                                class="slider-button slider-button--prev btn__prev btn__slider"
                                 name="previous"
                                 aria-label="{{ 'general.slider.previous_slide' | t }}"
                               >
@@ -629,12 +670,13 @@
                               </div>
                               <button
                                 type="button"
-                                class="slider-button slider-button--next"
+                                class="slider-button slider-button--next btn__next btn__slider"
                                 name="next"
                                 aria-label="{{ 'general.slider.next_slide' | t }}"
                               >
                                 {% render 'icon-caret' %}
                               </button>
+                              </div>
                             </div>
                           {%- endif -%}
                         </slideshow-component>
@@ -716,6 +758,127 @@
     </script>
   </div>
 </product-info>
+
+
+
+
+<!-- new code -->
+{% style %}
+  .product-slider-thumbs img {
+   width: 100%;
+   display: block;
+}
+  .product-slider-thumbs .slick-slide img {
+    width: 100px !important;
+  }
+
+.product-slider-slide {
+   padding: 5px;
+}
+
+.slick-slide img {
+  margin: 0 auto;
+}
+
+.product-slider-slide img {
+   width: 100%;
+   cursor: pointer;
+}
+.slick-track {
+  padding-top: 10px;
+}
+
+  .product-slider__image {
+  position: relative ;
+}
+
+  .slick-slider .slick-arrow, .arrow-control {
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    font-size: 0;
+    line-height: 50px;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    outline: none;
+    /* border-radius: 100%; */
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .slick-slider .slick-prev, .control-prev {
+    left: -10px;
+}
+  .slick-slider .slick-next, .control-next {
+    right: -10px;
+}
+.slick-slide {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+  .slick-slider .slick-prev::before, .control-prev::before {
+    content: '<';
+    color: black;
+}
+  .slick-slider .slick-arrow:before, .arrow-control:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+}
+  .slick-slider .slick-next::before, .control-next::before {
+    content: '>';
+    color: black;
+}
+  
+
+.slick-arrow {
+  pointer-events: all;
+  background: rgba(0, 0, 0, 0.5); /* Додати фоновий колір для видимості */
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slick-prev .slick-arrow {
+  margin-left: 10px; /* Відступ від лівого краю */
+}
+
+.slick-next .slick-arrow {
+  margin-right: 10px; /* Відступ від правого краю */
+}
+{% endstyle %}
+{% comment %} -------new code----- {% endcomment %}
+                            
+<script>
+  $(document).ready(function(){
+    $('.product-slider_next').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      // fade: true,
+      asNavFor: '.product-slider-thumbs'
+    });
+    $('.product-slider-thumbs').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.product-slider_next',
+      dots: false,
+      arrows: false,
+      centerMode: true,
+      focusOnSelect: true
+    });
+  });
+
+</script>
+<!-- end new code -->
 
 {% schema %}
 {
