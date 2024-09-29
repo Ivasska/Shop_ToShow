@@ -13,6 +13,7 @@
  - [ ] Parallax section
  - [ ] Marquee section
  - [ ] Footer
+ - [ ] Cart progress bar
 
 ### Video banner
 ![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/smartmockups_m1nur6c9.jpg)
@@ -46,3 +47,9 @@ A marquee section is an interactive element where text or images scroll smoothly
 ![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/mobile-footer.png)
 
 Different version of the footer section, using an accordion, for ease of use on mobile devices.
+
+### Cart progress bar
+![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/cart-progress-bar2.png)
+![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/cart-progress-bar.png)
+
+An interesting and at the same time useful detail - cart progress bar. which will help the user to understand whether the delivery of the product is free.
