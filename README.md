@@ -44,3 +44,5 @@ A marquee section is an interactive element where text or images scroll smoothly
 ### Footer
 ![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/desc-footer.png)
 ![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/mobile-footer.png)
+
+Different version of the footer section, using an accordion, for ease of use on mobile devices.
