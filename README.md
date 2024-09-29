@@ -17,4 +17,9 @@
 ### Video banner
 ![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/smartmockups_m1nur6c9.jpg)
 
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
+I added the ability to choose different videos for the desktop and for the mobile version.
+
+### Slider section
+![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/slider-section.png)
+
+Created a section with a slider (used slick.slider for the slider).
