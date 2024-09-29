@@ -8,7 +8,7 @@
 
  - [ ] Video banner
  - [ ] Add some slider
- - [ ] Tabbs
+ - [ ] Tabs
  - [ ] Lookbook section
  - [ ] Parallax section
  - [ ] Marquee section
@@ -23,3 +23,13 @@ I added the ability to choose different videos for the desktop and for the mobil
 ![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/slider-section.png)
 
 Created a section with a slider (used slick.slider for the slider).
+
+### Tabs
+![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/tabs-section.png)
+
+### Lookbook section
+![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/desc-lookbook.png)
+![Опис зображення](https://github.com/Ivasska/Shop_ToShow/raw/main/images/mobile-lookbook.png)
+
+I added the ability to choose different videos for the desktop and for the mobile version.
+
